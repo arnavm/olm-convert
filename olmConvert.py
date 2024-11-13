@@ -106,7 +106,7 @@ def processMessage(xmlString, olmZip=None, noAttachments=False):
     sourceDateStr = sourceDateElm.text
     try:
         srcDate = datetime.strptime(sourceDateStr, "%Y-%m-%dT%X")
-        dateEmlValue = srcDate.strftime("%a, %m %B %Y %X %z")
+        dateEmlValue = srcDate.strftime("%a, %d %B %Y %X %z")
         dateEmlStr = f"Date: {dateEmlValue}\n"
     except ValueError:
         raise ValueError("Unexpected sent time format in source.")
